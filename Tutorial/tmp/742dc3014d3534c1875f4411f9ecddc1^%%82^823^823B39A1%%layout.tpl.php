@@ -1,3 +1,5 @@
+<?php /* Smarty version 2.6.29, created on 2015-10-14 02:58:58
+         compiled from layout.tpl */ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,11 +13,13 @@
 </div>
 
 <div id="main">
-{$content}
+<?php echo $this->_tpl_vars['content']; ?>
+
 </div>
 
 <div id="footer">
-    Powered By Ethnam - {$smarty.const.ETHNA_VERSION}.
+    Powered By Ethnam - <?php echo @ETHNA_VERSION; ?>
+.
 </div>
 </body>
 </html>
