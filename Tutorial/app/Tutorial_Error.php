@@ -1,4 +1,5 @@
 <?php
+define('E_TUTORIL_AUTH', -128);
 /**
  *  Tutorial_Error.php
  *

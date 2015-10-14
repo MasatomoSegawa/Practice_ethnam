@@ -14,12 +14,14 @@ $app = BASE . "/app";
 $lib = BASE . "/lib";
 set_include_path(implode(PATH_SEPARATOR, array($app, $lib)) . PATH_SEPARATOR . get_include_path());
 
+
 require_once BASE . '/vendor/autoload.php';
 require_once 'Tutorial_Error.php';
 require_once 'Tutorial_ActionClass.php';
 require_once 'Tutorial_ActionForm.php';
 require_once 'Tutorial_ViewClass.php';
 require_once 'Tutorial_UrlHandler.php';
+require_once BASE . '/app/Tutorial_UserManager.php';
 
 /**
  *  Tutorial application Controller definition.
