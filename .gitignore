@@ -1,4 +1,6 @@
 Tutorial/vendor/*
+vendor/*
+/vendor/*
 composer.*
 Tutorial/tmp/*
 .vagrant
