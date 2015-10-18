@@ -1,0 +1,4 @@
+Tutorial/vendor/*
+composer.*
+Tutorial/tmp/*
+.vagrant
