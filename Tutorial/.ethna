@@ -1,4 +1,0 @@
-[project]
-ethna_version = "v2.23.12"
-controller_file = "app/Tutorial_Controller.php"
-controller_class = "Tutorial_Controller"
