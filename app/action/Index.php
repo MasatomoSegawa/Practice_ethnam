@@ -54,13 +54,8 @@ class Tutorial_Action_Index extends Tutorial_ActionClass
 
         
         if(!$this->session->isStart()){
-            print('せっしょんまだ');
             return 'login';
         }
-
-        var_dump($SESSION['hoge']);
-
-        print('せっしょんOK');
 
     }
 

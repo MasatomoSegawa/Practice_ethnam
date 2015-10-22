@@ -99,7 +99,6 @@ class Tutorial_Action_Login extends Ethna_ActionClass{
 		$password = $this->config->get('password');
 		if($password == $this->af->get('password')){
 			$this->session->start();
-			print('セッションスタート');
 			return 'index';
 		}
 
