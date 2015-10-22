@@ -49,6 +49,23 @@ class Tutorial_Form_Index extends Tutorial_ActionForm
  */
 class Tutorial_Action_Index extends Tutorial_ActionClass
 {
+
+    public function authenticate(){
+        
+        // 今はLoginがまだ出来ていないのでindexに飛ばす.
+        //return 'index';
+
+        //　セッションがなかったら. 
+        if($this->session->isStart() == false){
+
+            // login画面に飛ばす.
+            return 'login';
+        }
+
+        return null;
+
+    }
+
     /**
      *  Index action implementation.
      *
