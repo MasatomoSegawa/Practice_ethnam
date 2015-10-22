@@ -21,7 +21,6 @@ require_once 'Tutorial_ActionClass.php';
 require_once 'Tutorial_ActionForm.php';
 require_once 'Tutorial_ViewClass.php';
 require_once 'Tutorial_UrlHandler.php';
-require_once BASE . '/app/Tutorial_UserManager.php';
 
 /**
  *  Tutorial application Controller definition.

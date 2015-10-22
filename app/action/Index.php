@@ -49,27 +49,6 @@ class Tutorial_Form_Index extends Tutorial_ActionForm
  */
 class Tutorial_Action_Index extends Tutorial_ActionClass
 {
-
-    function authenticate(){
-
-        
-        if(!$this->session->isStart()){
-            return 'login';
-        }
-
-    }
-
-    /**
-     *  preprocess Index action.
-     *
-     *  @access    public
-     *  @return    string  Forward name (null if no errors.)
-     */
-    public function prepare()
-    {
-        return null;
-    }
-
     /**
      *  Index action implementation.
      *
