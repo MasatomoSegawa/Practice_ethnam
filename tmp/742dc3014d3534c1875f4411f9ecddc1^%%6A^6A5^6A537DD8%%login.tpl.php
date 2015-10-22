@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.29, created on 2015-10-15 09:53:20
+<?php /* Smarty version 2.6.29, created on 2015-10-22 15:12:04
          compiled from login.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'message', 'login.tpl', 14, false),)), $this); ?>
@@ -16,7 +16,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'message', '
   <?php endif; ?>
 
   <table border="0">
-    <<tr>
+    <tr>
      <td>メールアドレス</td>
      <td><input type="text" name="mailaddress" value="<?php echo $this->_tpl_vars['form']['mailaddress']; ?>
 "><?php echo smarty_function_message(array('name' => 'mailaddress'), $this);?>
@@ -29,6 +29,6 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'message', '
      </tr>
   </table>
   <p>
-  <input type="submit" name="action_login_do" value="ログイン">
+  <input type="submit" name="action_login" value="ログイン">
   </p>
 </form>

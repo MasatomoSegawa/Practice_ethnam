@@ -52,9 +52,15 @@ class Tutorial_Action_Index extends Tutorial_ActionClass
 
     function authenticate(){
 
+        
         if(!$this->session->isStart()){
+            print('せっしょんまだ');
             return 'login';
         }
+
+        var_dump($SESSION['hoge']);
+
+        print('せっしょんOK');
 
     }
 
@@ -66,13 +72,6 @@ class Tutorial_Action_Index extends Tutorial_ActionClass
      */
     public function prepare()
     {
-        /**
-        if ($this->af->validate() > 0) {
-            // forward to error view (this is sample)
-            return 'error';
-        }
-        $sample = $this->af->get('sample');
-        */
         return null;
     }
 

@@ -9,7 +9,7 @@
   {/if}
 
   <table border="0">
-    <<tr>
+    <tr>
      <td>メールアドレス</td>
      <td><input type="text" name="mailaddress" value="{$form.mailaddress}">{message name="mailaddress"}</td>
     </tr>
@@ -19,6 +19,6 @@
      </tr>
   </table>
   <p>
-  <input type="submit" name="action_login_do" value="ログイン">
+  <input type="submit" name="action_login" value="ログイン">
   </p>
 </form>
