@@ -20,6 +20,17 @@ class Tutorial_Form_DatabaseAccess extends Tutorial_ActionForm
      *  @var    array   form definition.
      */
     public $form = array(
+        'mailaddress' => [
+            'name'     => 'メールアドレス',
+            'required' => true,
+            'type'     => VAR_TYPE_STRING,
+        ],
+
+        'password' => [
+            'name'     => 'パスワード',
+            'required' => true,
+            'type'     => VAR_TYPE_STRING,
+        ],
        /*
         *  TODO: Write form definition which this action uses.
         *  @see http://ethna.jp/ethna-document-dev_guide-form.html
@@ -71,6 +82,7 @@ class Tutorial_Form_DatabaseAccess extends Tutorial_ActionForm
  */
 class Tutorial_Action_DatabaseAccess extends Tutorial_ActionClass
 {
+
     /**
      *  preprocess of DatabaseAccess Action.
      *
@@ -80,6 +92,14 @@ class Tutorial_Action_DatabaseAccess extends Tutorial_ActionClass
      */
     public function prepare()
     {
+
+        require_once BASE .'/lib/adodb/adodb.inc.php';
+
+        if($this->af->validate() > 0){
+          return 'registration';
+
+        }
+
         return null;
     }
 
@@ -91,6 +111,30 @@ class Tutorial_Action_DatabaseAccess extends Tutorial_ActionClass
      */
     public function perform()
     {
+
+        // バリデート通った後にここでDBに接続.
+        $db = $this->backend->getDB();
+
+        // DBの接続が出来なかったら. (これprepare()でやるべき？)
+        if(!$db){
+            return 'registration';
+        }
+
+        // フォームに与えられた値の取得.
+        $username = $this->af->get('mailaddress');
+        $password = $this->af->get('password');
+
+        // データの追加.
+        $result =& $db->query("INSERT INTO registereduser(username, password) VALUES ('$username', '$password')");
+        if(!$result){
+            print("あびゃ〜");
+        }
+
         return 'index';
+
+        //print($this->af->get('mailaddress'));
+        //print($this->af->get('password'));
+
+        //return 'index';
     }
 }

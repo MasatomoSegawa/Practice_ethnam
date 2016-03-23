@@ -14,7 +14,6 @@ $app = BASE . "/app";
 $lib = BASE . "/lib";
 set_include_path(implode(PATH_SEPARATOR, array($app, $lib)) . PATH_SEPARATOR . get_include_path());
 
-
 require_once BASE . '/vendor/autoload.php';
 require_once 'Tutorial_Error.php';
 require_once 'Tutorial_ActionClass.php';
@@ -53,6 +52,9 @@ class Tutorial_Controller extends Ethna_Controller
          *      'view_name' => 'Tutorial_View_Index',
          *  ),
          */
+       'class' => 'Ethna_ClassFactory',
+       'backend' => 'Ethna_Backend',
+       'config' => 'Ethna_Config',
     );
 
     /**
@@ -122,7 +124,7 @@ class Tutorial_Controller extends Ethna_Controller
         'class'         => 'Ethna_ClassFactory',
         'backend'       => 'Ethna_Backend',
         'config'        => 'Ethna_Config',
-        'db'            => 'Ethna_DB_PEAR',
+        'db'            => 'Ethna_DB_ADOdb',
         'error'         => 'Ethna_ActionError',
         'form'          => 'Tutorial_ActionForm',
         'i18n'          => 'Ethna_I18N',

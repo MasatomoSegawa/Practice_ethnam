@@ -6,13 +6,14 @@
  */
 $config = array(
     // site
-    'url' => '',
+    'url'   => '',
 
     // debug
     // (to enable ethna_info and ethna_unittest, turn this true)
     'debug' => false,
+    'dsn'   => 'pgsql://postgres:postgres@localhost/test1',
+    //pgsql://username:password@protocol+hostspec/database
 
-    'password' => 'hogehoge',
 
     // db
     // sample-1: single db

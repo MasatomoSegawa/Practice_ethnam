@@ -93,6 +93,9 @@ class Tutorial_Action_LoginDo extends Tutorial_ActionClass
     public function prepare()
     {
 
+        require_once BASE .'/lib/adodb/adodb.inc.php';
+
+
         if($this->af->validate() > 0){
             return 'login';
         }
@@ -108,9 +111,28 @@ class Tutorial_Action_LoginDo extends Tutorial_ActionClass
      */
     public function perform()
     {
-        print($this->af->get('mailaddress'));
-        print($this->af->get('password'));
-        //die($this->af->get('mailaddress'));
+
+        // バリデート通った後にここでDBに接続.
+        $db = $this->backend->getDB();
+
+        // DBの接続が出来なかったら. (これprepare()でやるべき？)
+        if(!$db){
+            return 'registration';
+        }
+
+        $username = $this->af->get('mailaddress');
+        $password = $this->af->get('password');
+
+        $sql = "SELECT username FROM registereduser WHERE password='$password'";
+        $result =& $db->query($sql);
+
+        if($result->fetchRow()){
+            print("OK");
+        }
+        else{
+            print("No");
+        }
+        
     }
 
 }
